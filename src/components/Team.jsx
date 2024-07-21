@@ -6,12 +6,15 @@ import {
   Grid,
   Avatar,
   useTheme,
+  Button,
 } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import grace from '../assets/grace.png';
 import aria from '../assets/aria.png';
 import will from '../assets/will.png';
 import ploy from '../assets/ploy.png';
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const teamMembers = [
   {
@@ -96,6 +99,15 @@ const Team = () => {
         <Typography variant="h4" gutterBottom color={theme.palette.secondary[100]} lineHeight={1.8} >
           Need help with installation, find a bug, or just need a clarification about our tool?<br/> We're here to lend a helping hand.
         </Typography>
+        <Button
+          variant='contained'
+          color='primary'
+          sx={{ mb: 4 }}
+          startIcon={<MailOutlineIcon />}
+          onClick={() => window.location.href = 'mailto:declustor@gmail.com'}
+        >
+          Contact Us
+        </Button>
         <Grid container spacing={2} justifyContent="center" sx={{ mt: 4 }}>
           {teamMembers.map((member, index) => (
             <Grid item key={index} xs={12} sm={6} md={3}>

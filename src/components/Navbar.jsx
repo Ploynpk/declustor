@@ -58,14 +58,24 @@ const Navbar = () => {
 
         {/* linkedin icon button */}
         <Tooltip title="LinkedIn">
-          <IconButton>
+          <IconButton
+            component="a"
+            href="https://www.linkedin.com/company/declustor/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LinkedInIcon />
           </IconButton>
         </Tooltip>
 
         {/* twitter icon button */}
         <Tooltip title="X">
-          <IconButton>
+          <IconButton
+            component="a"
+            href="https://x.com/declustor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <XIcon />
           </IconButton>
         </Tooltip>

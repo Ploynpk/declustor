@@ -1,95 +1,82 @@
-import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+import React from 'react';
+import Slider from 'react-slick';
+import { Box, useTheme } from '@mui/material';
+import pic3 from '../assets/12.png';
+import pic4 from '../assets/4.png';
+import pic5 from '../assets/5.png';;
+import pic7 from '../assets/logs.png';
+import pic8 from '../assets/noti.png';
+import pic10 from '../assets/10.png';
+import pic12 from '../assets/11.png';
+import pic9 from '../assets/9.png';
+import pic13 from '../assets/13.png';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Picture = () => {
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
   return (
-    <ImageList
-      sx={{ width: 500, height: 350 }}
-      variant="quilted"
-      cols={4}
-      rowHeight={121}
-    >
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-          <img
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <Box sx={{ width: '600px', margin: '0 auto', padding: '20px' }}>
+      <Slider {...settings}>
+        {itemData.map((item) => (
+          <Box key={item.img} sx={{ padding: '0 10px', overflow: 'hidden' }}>
+            <img
+              src={item.img}
+              alt={item.title}
+              style={{ width: '100%', height: 'auto', maxHeight: '400px', borderRadius: '10px' , boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',}}
+            />
+          </Box>
+        ))}
+      </Slider>
+    </Box>
   );
-}
+};
 
 const itemData = [
+
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    rows: 2,
-    cols: 2,
+    img: pic3,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
+    img: pic13,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
+    img: pic4,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    cols: 2,
+    img: pic5,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    cols: 2,
+    img: pic7,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
-    rows: 2,
-    cols: 2,
+    img: pic8,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
+    img: pic12,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
+    img: pic9,
+    title: 'line',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    cols: 2,
+    img: pic10,
+    title: 'line',
   },
 ];
 
