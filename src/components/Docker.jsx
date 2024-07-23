@@ -32,7 +32,7 @@ const Docker = () => {
 
   const handleCopy = () => {
     navigator.clipboard
-      .writeText('docker pull declustor')
+      .writeText('docker pull declustorteam/declustor')
       .then(() => {
         setCopyText('Copied!')
         setCopied(true)
@@ -59,7 +59,7 @@ const Docker = () => {
           <Grid item xs={12} md={6}>
             <Box display="flex" alignItems="center">
               <Link
-                href="https://hub.docker.com/r/declustor"
+                href="https://hub.docker.com/r/declustorteam/declustor"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ display: 'inline-block', mr: 1 }}
@@ -119,7 +119,7 @@ const Docker = () => {
                   color: '#000000',
                 }}
               >
-                docker pull declustor
+                docker pull declustorteam/declustor
               </Typography>
               <Button
                 variant="contained"
