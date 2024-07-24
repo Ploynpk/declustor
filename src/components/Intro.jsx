@@ -30,7 +30,7 @@ const Intro = () => {
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start', // Align content to the top
+        justifyContent: 'flex-start',
         alignItems: 'center',
         textAlign: 'center',
         px: 3,
@@ -59,9 +59,9 @@ const Intro = () => {
             zIndex: -1,
             fontSize: '6rem',
             fontWeight: 'bold',
-            color: 'rgba(0, 0, 0, 0.3)', // Light paint effect color
-            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', // Paint stroke shadow effect
-            transform: 'rotate(-2deg)', // Slight rotation for a more hand-painted feel
+            color: 'rgba(0, 0, 0, 0.3)',
+            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)',
+            transform: 'rotate(-2deg)',
           },
         }}
       >
@@ -89,7 +89,7 @@ const Intro = () => {
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)', // Optional: additional shadow for depth
+              textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
               animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
             },
           }}
@@ -118,10 +118,10 @@ const Intro = () => {
             left: '0',
             width: '100%',
             height: '100%',
-            background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+            background: 'rgba(0, 0, 0, 0.5)',
             zIndex: -1,
-            transform: 'translateY(-50%)', // Centered vertically
-            filter: 'blur(5px)', // Blurring effect to create a paint stroke feel
+            transform: 'translateY(-50%)',
+            filter: 'blur(5px)',
           },
         }}
       >
@@ -144,8 +144,8 @@ const Intro = () => {
         src={dashboard}
         alt='Dashboard'
         sx={{
-          width: '90%', // Increase width of the GIF
-          maxWidth: '1000px', // Increase maxWidth of the GIF
+          width: '90%',
+          maxWidth: '1000px',
           borderRadius: '8px',
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
         }}

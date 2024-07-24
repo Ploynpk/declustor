@@ -32,31 +32,42 @@ const Features = () => {
         backgroundColor: theme.palette.background.default,
         py: 10,
         px: 2,
+        pb: 25,
+        pt: 25,
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center">
+      <Container maxWidth='lg'>
+        <Grid container spacing={4} alignItems='center'>
           <Grid item xs={12} md={6}>
             <Picture />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ marginLeft: '60px' }}>
+            <Box sx={{ marginLeft: '75px' }}>
               <Typography
-                variant="h3"
+                variant='h3'
                 gutterBottom
                 color={theme.palette.secondary[100]}
-                sx={{ fontWeight: 'bold', lineHeight: 1.5 }}
+                sx={{
+                  fontWeight: 'bold',
+                  fontSize: 50,
+                  lineHeight: 1.5,
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
               >
                 What is DeClustor? <br />
                 <Typography
-                  component="span"
-                  variant="h1"
+                  component='span'
+                  variant='h1'
                   sx={{
                     fontWeight: 'bold',
+                    fontSize: 30,
+                    display: 'flex',
+                    justifyContent: 'center',
                     color: theme.palette.secondary[400],
                   }}
                 >
-                  Everything you need.
+                  EVERYTHING you need.
                 </Typography>
               </Typography>
               <Box sx={{ mt: 2, lineHeight: 1.8 }}>
@@ -72,9 +83,9 @@ const Features = () => {
                     <ListItem key={index}>
                       <ListItemIcon>
                         <Box
-                          component="img"
+                          component='img'
                           src={check}
-                          alt="check"
+                          alt='check'
                           sx={{
                             width: '20px',
                             height: '20px',
@@ -85,7 +96,7 @@ const Features = () => {
                         />
                       </ListItemIcon>
                       <ListItemText>
-                        <Typography variant="h3">{text}</Typography>
+                        <Typography variant='h3'>{text}</Typography>
                       </ListItemText>
                     </ListItem>
                   ))}
