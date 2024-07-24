@@ -21,9 +21,9 @@ const Navbar = () => {
       justifyContent='space-between'
       alignItems='center'
       sx={{
-        height: '120px', // Height of the navbar
-        backgroundColor: theme.palette.background.default, // Optional: background color
-        padding: '0 16px', // Add padding if needed to prevent clipping
+        height: '120px',
+        backgroundColor: theme.palette.background.default,
+        padding: '0 16px',
       }}
     >
       {/* logo on the left side */}
@@ -31,16 +31,16 @@ const Navbar = () => {
         component='img'
         alt='logo'
         src={nobglogo}
-        height='80px' // Adjust logo height to fit within the navbar
-        width='80px' // Adjust logo width to maintain aspect ratio
+        height='80px'
+        width='80px'
         sx={{
-          objectFit: 'contain', // Ensure logo is fully visible
+          objectFit: 'contain',
           borderColor: theme.palette.primary[400],
           borderStyle: 'solid',
           borderWidth: 1,
           cursor: 'pointer',
           display: 'flex',
-          alignItems: 'center', // Center align the logo vertically
+          alignItems: 'center',
         }}
       />
 
@@ -56,7 +56,7 @@ const Navbar = () => {
             target='_blank'
             rel='noopener noreferrer'
             sx={{
-              fontSize: '20px', // Adjust icon size
+              fontSize: '20px',
             }}
           >
             <GitHubIcon />
@@ -70,7 +70,7 @@ const Navbar = () => {
             target='_blank'
             rel='noopener noreferrer'
             sx={{
-              fontSize: '20px', // Adjust icon size
+              fontSize: '20px',
             }}
           >
             <LinkedInIcon />
@@ -84,7 +84,7 @@ const Navbar = () => {
             target='_blank'
             rel='noopener noreferrer'
             sx={{
-              fontSize: '20px', // Adjust icon size
+              fontSize: '20px',
             }}
           >
             <XIcon />
@@ -104,9 +104,9 @@ const Navbar = () => {
           }}
         >
           {theme.palette.mode === 'dark' ? (
-            <DarkModeOutlinedIcon sx={{ fontSize: '24px' }} /> // Increase icon size
+            <DarkModeOutlinedIcon sx={{ fontSize: '24px' }} />
           ) : (
-            <LightModeOutlinedIcon sx={{ fontSize: '24px' }} /> // Increase icon size
+            <LightModeOutlinedIcon sx={{ fontSize: '24px' }} />
           )}
         </IconButton>
       </FlexBetween>

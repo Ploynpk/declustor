@@ -28,18 +28,18 @@ const App = () => {
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
-            background: theme.palette.background.gradient, // Use the gradient from the theme
+            background: theme.palette.background.gradient,
             backgroundSize: 'cover',
             backgroundAttachment: 'fixed',
-            overflow: 'hidden', // Ensure no overflow
-            p: 0, // Remove padding
-            m: 0, // Remove margin if needed
+            overflow: 'hidden',
+            p: 0,
+            m: 0,
           }}
         >
           <Navbar />
           <Box
             sx={{
-              flexGrow: 1, // Ensure that content takes up available space
+              flexGrow: 1,
             }}
           >
             <Intro />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import dashboard from '../assets/dashboard.gif';
+import cloud from '../assets/cloud.png';
 
 // Keyframe animation for typing effect
 const typing = keyframes`
@@ -23,6 +24,19 @@ const cursorBlink = keyframes`
   }
 `;
 
+// Keyframe animation for floating clouds
+const float = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 const Intro = () => {
   return (
     <Box
@@ -38,8 +52,46 @@ const Intro = () => {
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         overflow: 'hidden',
+        position: 'relative',
       }}
     >
+      {/* Clouds */}
+      <Box
+        component='img'
+        src={cloud}
+        alt='Cloud 1'
+        sx={{
+          position: 'absolute',
+          top: '10%',
+          left: '4%',
+          width: '15%',
+          animation: `${float} 20s linear infinite`,
+        }}
+      />
+      <Box
+        component='img'
+        src={cloud}
+        alt='Cloud 2'
+        sx={{
+          position: 'absolute',
+          top: '11%',
+          left: '7%',
+          width: '18%',
+          animation: `${float} 20s linear infinite`,
+        }}
+      />
+      <Box
+        component='img'
+        src={cloud}
+        alt='Cloud 3'
+        sx={{
+          position: 'absolute',
+          top: '0%',
+          right: '5%',
+          width: '20%',
+          animation: `${float} 25s linear infinite`,
+        }}
+      />
       <Typography
         variant='h2'
         component='h1'

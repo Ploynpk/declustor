@@ -50,8 +50,8 @@ const Docker = () => {
   const images = [piepic, logs, docs, bell, linepic];
   const numberOfImages = images.length;
   const angle = 360 / numberOfImages;
-  const imageSize = 100; // Adjusted image size
-  const radius = 150; // Adjusted radius
+  const imageSize = 100;
+  const radius = 150;
 
   return (
     <Box
@@ -89,8 +89,8 @@ const Docker = () => {
                   src={dc}
                   alt='DockerHub'
                   sx={{
-                    width: '120px', // Adjusted width
-                    height: '90px', // Adjusted height
+                    width: '120px',
+                    height: '90px',
                     borderRadius: '50%',
                     backgroundColor: 'transparent',
                     boxShadow: `0 4px 8px ${theme.palette.grey[600]}`,
@@ -102,14 +102,14 @@ const Docker = () => {
                 />
               </Link>
               <Typography
-                variant='h3' // Increased font size for better visibility
+                variant='h3'
                 gutterBottom
                 color='white'
                 sx={{
                   fontWeight: 'bold',
                   lineHeight: 1.5,
                   mb: 1,
-                  fontSize: '2rem', // Adjusted font size
+                  fontSize: '2rem',
                 }}
               >
                 Ready to Begin? <br />
@@ -183,7 +183,7 @@ const Docker = () => {
                     '&:hover': {
                       background: copied
                         ? 'linear-gradient(to right, #0db7ed, #8ec5fc)'
-                        : 'linear-gradient(to right, #8ec5fc, #0db7ed)', // Match hover effect
+                        : 'linear-gradient(to right, #8ec5fc, #0db7ed)',
                     },
                     transition: 'background 0.3s ease',
                   }}
