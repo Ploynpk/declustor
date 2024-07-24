@@ -13,7 +13,6 @@ import grace from '../assets/grace.png';
 import aria from '../assets/aria.png';
 import will from '../assets/will.png';
 import ploy from '../assets/ploy.png';
-import FeedbackIcon from '@mui/icons-material/Feedback';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const teamMembers = [
@@ -56,8 +55,8 @@ const Team = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.style.animationPlayState = 'running';
           }
@@ -68,7 +67,7 @@ const Team = () => {
       }
     );
 
-    avatarRefs.current.forEach(avatar => {
+    avatarRefs.current.forEach((avatar) => {
       if (avatar) {
         observer.observe(avatar);
         avatar.style.animationPlayState = 'paused';
@@ -76,7 +75,7 @@ const Team = () => {
     });
 
     return () => {
-      avatarRefs.current.forEach(avatar => {
+      avatarRefs.current.forEach((avatar) => {
         if (avatar) {
           observer.unobserve(avatar);
         }
@@ -87,50 +86,94 @@ const Team = () => {
   return (
     <Box
       sx={{
-        py: 5,
-        backgroundColor: 'background.secondary',
+        py: 8,
+        pt: 15,
+        pb: 15,
+        backgroundColor: theme.palette.background.default,
+        borderRadius: '8px',
+        border: `1px solid ${theme.palette.grey[300]}`,
         textAlign: 'center',
       }}
     >
-      <Container maxWidth="lg">
-        <Typography variant="h3" fontWeight='bold' gutterBottom color={theme.palette.secondary.main}>
+      <Container maxWidth='lg'>
+        <Typography
+          variant='h1'
+          fontWeight='bold'
+          gutterBottom
+          color='#fff'
+          sx={{ mb: 3 }}
+        >
           MEET OUR TEAM
         </Typography>
-        <Typography variant="h4" gutterBottom color={theme.palette.secondary[100]} lineHeight={1.8} >
-          Need help with installation, find a bug, or just need a clarification about our tool?<br/> We're here to lend a helping hand.
+        <Typography
+          variant='h3'
+          gutterBottom
+          color={theme.palette.secondary[100]}
+          lineHeight={1.8}
+          sx={{ mb: 4 }}
+        >
+          Need help with installation, find a bug, or just need a clarification
+          about our tool?
+          <br /> We're here to lend a helping hand.
         </Typography>
         <Button
           variant='contained'
-          color='primary'
-          sx={{ mb: 4 }}
+          color='secondary'
+          sx={{
+            mb: 4,
+            backgroundColor: theme.palette.secondary.main,
+            transition: 'background-color 0.3s ease',
+            '&:hover': {
+              backgroundColor: theme.palette.secondary[300],
+            },
+          }}
           startIcon={<MailOutlineIcon />}
-          onClick={() => window.location.href = 'mailto:declustor@gmail.com'}
+          onClick={() => (window.location.href = 'mailto:declustor@gmail.com')}
         >
           Contact Us
         </Button>
-        <Grid container spacing={2} justifyContent="center" sx={{ mt: 4 }}>
+        <Grid container spacing={4} justifyContent='center'>
           {teamMembers.map((member, index) => (
             <Grid item key={index} xs={12} sm={6} md={3}>
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                href={member.linkedin}
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{
+                  textDecoration: 'none',
+                }}
+              >
                 <Avatar
-                  ref={el => avatarRefs.current[index] = el}
+                  ref={(el) => (avatarRefs.current[index] = el)}
                   src={member.img}
                   alt={member.name}
                   sx={{
-                    width: 120,
-                    height: 120,
+                    width: 150, // Increased size
+                    height: 150, // Increased size
                     mx: 'auto',
                     mb: 2,
                     animation: `${slideUp} 0.5s ease-in-out forwards`,
-                    animationDelay: `${index * 0.2}s`, 
-                    opacity: 0, 
+                    animationDelay: `${index * 0.2}s`,
+                    opacity: 0,
+                    boxShadow: `0 4px 8px ${theme.palette.grey[500]}`,
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.1)',
+                      boxShadow: `0 6px 12px ${theme.palette.grey[700]}`,
+                    },
                   }}
                 />
               </a>
-              <Typography variant="h5" sx={{ color: theme.palette.secondary[100] }}>
+              <Typography
+                variant='h3'
+                sx={{
+                  color: theme.palette.secondary[100],
+                  fontWeight: 'bold',
+                  mb: 1,
+                }}
+              >
                 {member.name}
               </Typography>
-              <Typography variant="body2">{member.role}</Typography>
             </Grid>
           ))}
         </Grid>

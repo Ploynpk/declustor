@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Container,
   Box,
@@ -7,44 +7,51 @@ import {
   useTheme,
   Link,
   Button,
-} from '@mui/material'
-import { keyframes } from '@emotion/react'
-import piepic from '../assets/pie.png'
-import logs from '../assets/2721273.png'
-import docs from '../assets/831842.png'
-import bell from '../assets/notification.png'
-import linepic from '../assets/line.png'
-import dc from '../assets/dc.jpg'
+} from '@mui/material';
+import { keyframes } from '@emotion/react';
+import piepic from '../assets/pie.png';
+import logs from '../assets/2721273.png';
+import docs from '../assets/831842.png';
+import bell from '../assets/notification.png';
+import linepic from '../assets/line.png';
+import dc from '../assets/dc.jpg';
 
+// Circular motion for the ferris wheel
 const circularMotion = keyframes`
   0% {
-    transform: rotate(0deg) translateX(120px) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    transform: rotate(360deg);
   }
-`
+`;
 
 const Docker = () => {
-  const theme = useTheme()
-  const [copyText, setCopyText] = useState('Copy')
-  const [copied, setCopied] = useState(false)
+  const theme = useTheme();
+  const [copyText, setCopyText] = useState('Copy');
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard
       .writeText('docker pull declustorteam/declustor')
       .then(() => {
-        setCopyText('Copied!')
-        setCopied(true)
+        setCopyText('Copied!');
+        setCopied(true);
         setTimeout(() => {
-          setCopyText('Copy')
-          setCopied(false)
-        }, 2000)
+          setCopyText('Copy');
+          setCopied(false);
+        }, 2000);
       })
       .catch((err) => {
-        console.error('Failed to copy text: ', err)
-      })
-  }
+        console.error('Failed to copy text: ', err);
+      });
+  };
+
+  const images = [piepic, logs, docs, bell, linepic];
+  const numberOfImages = images.length;
+  const angle = 360 / numberOfImages;
+  const imageSize = 100;
+  const radius = 150;
 
   return (
     <Box
@@ -52,133 +59,192 @@ const Docker = () => {
         backgroundColor: theme.palette.background.default,
         py: 15,
         px: 2,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        pb: 40,
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box display="flex" alignItems="center">
+      <Container maxWidth='lg'>
+        <Grid container spacing={4} alignItems='center' justifyContent='center'>
+          <Grid item xs={12} md={6} container justifyContent='center'>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                textAlign: 'center',
+              }}
+            >
               <Link
-                href="https://hub.docker.com/r/declustorteam/declustor"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ display: 'inline-block', mr: 1 }}
+                href='https://hub.docker.com/r/declustorteam/declustor'
+                target='_blank'
+                rel='noopener noreferrer'
+                sx={{ display: 'inline-block', mb: 2 }}
               >
                 <Box
-                  component="img"
+                  component='img'
                   src={dc}
-                  alt="DockerHub"
+                  alt='DockerHub'
                   sx={{
-                    width: '80px',
-                    height: '65px',
+                    width: '120px',
+                    height: '90px',
                     borderRadius: '50%',
                     backgroundColor: 'transparent',
-                    boxShadow: 1,
+                    boxShadow: `0 4px 8px ${theme.palette.grey[600]}`,
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.1)',
+                    },
                   }}
                 />
               </Link>
               <Typography
-                variant="h3"
+                variant='h3'
                 gutterBottom
-                color={theme.palette.secondary[100]}
-                sx={{ fontWeight: 'bold', lineHeight: 1.5 }}
+                color='white'
+                sx={{
+                  fontWeight: 'bold',
+                  lineHeight: 1.5,
+                  mb: 1,
+                  fontSize: '2rem',
+                }}
               >
                 Ready to Begin? <br />
                 <Typography
-                  component="span"
-                  variant="h1"
+                  component='span'
+                  variant='h2'
                   sx={{
                     fontWeight: 'bold',
-                    color: '#0db7ed',
+                    fontSize: '3rem',
+                    color: '#8ec5fc',
+                    textShadow: `0 0 10px ${theme.palette.primary.main}, 0 0 20px ${theme.palette.primary.main}`,
+                    transition: 'transform 0.3s ease, text-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.1)',
+                      textShadow: `0 0 15px ${theme.palette.primary.main}, 0 0 30px ${theme.palette.primary.main}`,
+                    },
                   }}
                 >
                   dockerhub
                 </Typography>
               </Typography>
-            </Box>
-            <Typography variant="h3" paragraph sx={{ mt: 3 }}>
-              Docker Pull command
-            </Typography>
-            <Box
-              sx={{
-                mt: 2,
-                p: 2,
-                backgroundColor: '#ffffff',
-                borderRadius: 1,
-                boxShadow: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}
-            >
               <Typography
-                variant="body1"
+                variant='h5'
+                paragraph
                 sx={{
-                  fontFamily: 'monospace',
+                  mt: 2,
+                  color: 'white',
+                  maxWidth: '500px',
                   fontSize: '1.25rem',
-                  color: '#000000',
                 }}
               >
-                docker pull declustorteam/declustor
+                Use the following command to pull the DeClustor image from
+                DockerHub and get started quickly.
               </Typography>
-              <Button
-                variant="contained"
-                onClick={handleCopy}
+              <Box
                 sx={{
-                  ml: 2,
-                  backgroundColor: copied ? 'green' : 'rgb(29, 99, 237)',
-                  '&:hover': {
-                    backgroundColor: copied ? 'darkgreen' : 'rgb(29, 99, 237)',
-                  },
+                  mt: 2,
+                  p: 2,
+                  backgroundColor: theme.palette.background.paper,
+                  borderRadius: 1,
+                  boxShadow: `0 4px 8px ${theme.palette.grey[600]}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  mx: 'auto',
+                  maxWidth: '500px',
                 }}
               >
-                {copyText}
-              </Button>
+                <Typography
+                  variant='body1'
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: '1rem',
+                    color: 'white',
+                    whiteSpace: 'nowrap',
+                    flexGrow: 1,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                >
+                  docker pull declustorteam/declustor
+                </Typography>
+                <Button
+                  variant='contained'
+                  onClick={handleCopy}
+                  sx={{
+                    ml: 2,
+                    background: copied
+                      ? 'linear-gradient(to right, #0db7ed, #8ec5fc)'
+                      : 'linear-gradient(to right, #8ec5fc, #0db7ed)',
+                    '&:hover': {
+                      background: copied
+                        ? 'linear-gradient(to right, #0db7ed, #8ec5fc)'
+                        : 'linear-gradient(to right, #8ec5fc, #0db7ed)',
+                    },
+                    transition: 'background 0.3s ease',
+                  }}
+                >
+                  {copyText}
+                </Button>
+              </Box>
+              <Typography
+                variant='body1'
+                paragraph
+                sx={{ mt: 3, color: 'white', fontSize: '1.25rem' }}
+              >
+                Follow our step-by-step installation on{' '}
+                <Link
+                  href='https://github.com/oslabs-beta/DeClustor'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  sx={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontSize: '1.25rem',
+                    '&:hover': {
+                      textDecoration: 'underline',
+                    },
+                  }}
+                >
+                  GitHub
+                </Link>
+                .
+              </Typography>
             </Box>
-            <Typography variant="body1" paragraph sx={{ mt: 3 }}>
-              Follow our step-by-step installation on{' '}
-              <Link
-                href="https://github.com/oslabs-beta/DeClustor"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: '#000000',
-                  textDecoration: 'none',
-                  fontSize: '1.25rem',
-                }}
-              >
-                GitHub
-              </Link>
-              .
-            </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} container justifyContent='center'>
             <Box
               sx={{
                 position: 'relative',
-                width: '300px',
-                height: '300px',
+                width: '320px',
+                height: '320px',
                 margin: '0 auto',
                 borderRadius: '50%',
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                animation: `${circularMotion} 10s linear infinite`,
               }}
             >
-              {[piepic, logs, docs, bell, linepic].map((src, index) => (
+              {images.map((src, index) => (
                 <Box
                   key={index}
-                  component="img"
+                  component='img'
                   src={src}
                   alt={`image-${index}`}
                   sx={{
                     position: 'absolute',
-                    width: '80px',
-                    height: '80px',
+                    width: `${imageSize}px`,
+                    height: `${imageSize}px`,
                     borderRadius: '50%',
-                    animation: `${circularMotion} 10s linear infinite`,
-                    animationDelay: `${index * 2}s`,
+                    transform: `rotate(${
+                      index * angle
+                    }deg) translateX(${radius}px) rotate(-${index * angle}deg)`,
                     transformOrigin: 'center',
                   }}
                 />
@@ -188,7 +254,7 @@ const Docker = () => {
         </Grid>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Docker
+export default Docker;
