@@ -92,7 +92,7 @@ const Cards = () => {
       <Box
         sx={{
           overflow: 'hidden',
-          position: 'relative',
+          position: 'center',
           width: '100%',
           height: 400,
         }}
