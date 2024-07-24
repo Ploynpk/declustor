@@ -1,122 +1,157 @@
-import React from 'react'
-import {
-  Container,
-  Box,
-  Typography,
-  Grid,
-  useTheme,
-  Button
-} from '@mui/material'
-import { keyframes } from '@emotion/react'
-import dashboard from '../assets/dashboard.gif'
+import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import { keyframes } from '@emotion/react';
+import dashboard from '../assets/dashboard.gif';
 
-const spin = keyframes`
-  0% {
-    transform: rotateY(0deg);
+// Keyframe animation for typing effect
+const typing = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+`;
+
+// Keyframe animation for cursor effect
+const cursorBlink = keyframes`
+  from, to {
+    border-color: transparent;
   }
   50% {
-    transform: rotateY(180deg);
+    border-color: white;
   }
-  50.1% {
-    transform: rotateY(180deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
-`
+`;
 
 const Intro = () => {
-  const theme = useTheme()
-
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.background.default,
-        py: 2,
-        px: 2,
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start', // Align content to the top
+        alignItems: 'center',
+        textAlign: 'center',
+        px: 3,
+        background: 'linear-gradient(to bottom right, #e0c3fc, #8ec5fc)',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        overflow: 'hidden',
       }}
     >
-      
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color={theme.palette.secondary[100]}
-              sx={{ fontWeight: 'bold', lineHeight: 1.5 }}
-            >
-              Welcome to DeClustor
-              <br />
-              your centralized solution for
-              <br />
-              Monitoring and Managing
-              <br />
-              <Typography
-                component="span"
-                variant="h1"
-                sx={{
-                  fontWeight: 'bold',
-                  textDecoration: 'underline',
-                  color: theme.palette.secondary[400],
-                }}
-              >
-                AWS ECS Clusters
-              </Typography>
-            </Typography>
-
-            <Typography
-              variant="body1"
-              gutterBottom
-              color={theme.palette.secondary[100]}
-              sx={{ mt: 2, lineHeight: 1.8 }}
-            >
-              Experience a user-friendly dashboard, Track metrics and
-              <br />
-              Real-time performance across various services and clusters seamlessly
-              <br />
-            </Typography>
-            <Box sx={{ mt: 4 }}>
-              <a
-                href="https://github.com/oslabs-beta/DeClustor"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  sx={{ color: theme.palette.secondary[100] }}
-                >
-                  Learn More
-                </Button>
-              </a>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box sx={{ textAlign: 'center', perspective: 1000 }}>
-              <Box
-                component="img"
-                src={dashboard}
-                alt="Dashboard"
-                sx={{
-                  width: '150%', 
-                  maxWidth: '600px', 
-                  // boxShadow: '0px 2px 0px 20px rgba(1, 27, 0, 0.5)',
-                  boxShadow: '0px 40px 50px rgba(2, 27, 0, 0.5)', 
-                  borderRadius: 2,
-                  animation: `${spin} 3s forwards`,
-                  transformStyle: 'preserve-3d',
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+      <Typography
+        variant='h2'
+        component='h1'
+        sx={{
+          fontSize: '6rem',
+          fontWeight: 'bold',
+          color: '#fff',
+          mb: 3,
+          position: 'relative',
+          display: 'inline-block',
+          overflow: 'hidden',
+          '&::before': {
+            content: '"Welcome to"',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: -1,
+            fontSize: '6rem',
+            fontWeight: 'bold',
+            color: 'rgba(0, 0, 0, 0.3)', // Light paint effect color
+            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', // Paint stroke shadow effect
+            transform: 'rotate(-2deg)', // Slight rotation for a more hand-painted feel
+          },
+        }}
+      >
+        Welcome to
+        <Box
+          component='span'
+          sx={{
+            display: 'inline-block',
+            ml: 2,
+            fontSize: '6rem',
+            fontWeight: 'bold',
+            color: '#fff',
+            position: 'relative',
+            zIndex: 1,
+            '&::before': {
+              content: '"DeClustor"',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              fontSize: '6rem',
+              fontWeight: 'bold',
+              color: '#fff',
+              background: 'linear-gradient(45deg, #a2c2e2, #b4a6e5)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)', // Optional: additional shadow for depth
+              animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
+            },
+          }}
+        >
+          DeClustor
+        </Box>
+      </Typography>
+      <Typography
+        variant='h5'
+        component='h2'
+        sx={{
+          fontSize: '2rem',
+          color: '#fff',
+          mb: 4,
+          overflow: 'hidden',
+          whiteSpace: 'nowrap',
+          borderRight: '2px solid white',
+          animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
+          display: 'inline-block',
+          width: 'fit-content',
+          position: 'relative',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+            zIndex: -1,
+            transform: 'translateY(-50%)', // Centered vertically
+            filter: 'blur(5px)', // Blurring effect to create a paint stroke feel
+          },
+        }}
+      >
+        Your centralized solution for monitoring and managing AWS ECS Clusters.
+      </Typography>
+      <Box sx={{ mb: 4 }}>
+        <Button
+          variant='contained'
+          color='secondary'
+          size='large'
+          href='https://github.com/oslabs-beta/DeClustor'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Learn More
+        </Button>
+      </Box>
+      <Box
+        component='img'
+        src={dashboard}
+        alt='Dashboard'
+        sx={{
+          width: '90%', // Increase width of the GIF
+          maxWidth: '1000px', // Increase maxWidth of the GIF
+          borderRadius: '8px',
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
+        }}
+      />
     </Box>
-  )
-}
+  );
+};
 
-export default Intro
-
+export default Intro;

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
   Box,
   Grid,
@@ -7,20 +7,19 @@ import {
   CardMedia,
   Typography,
   CardActionArea,
-} from '@mui/material'
-import { useTheme } from '@mui/material/styles'
-import ecs from '../assets/ecss.png'
-import ecr from '../assets/aws-ecr-cover.png'
-import docker from '../assets/docker2.png'
-import ws from '../assets/ws.png'
-
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import ecs from '../assets/ecss.png';
+import ecr from '../assets/aws-ecr-cover.png';
+import docker from '../assets/docker2.png';
+import ws from '../assets/ws.png';
 
 const Cards = () => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Box sx={{ backgroundColor: theme.palette.background.default, py: 20 }}>
-      <Grid container spacing={3} justifyContent="center">
+      <Grid container spacing={3} justifyContent='center'>
         {[
           {
             title: 'AWS ECS',
@@ -38,7 +37,7 @@ const Cards = () => {
             title: 'WebSocket',
             image: ws,
             description:
-                'Enables real-time updates of dashboards, and real-time notifications.',          
+              'Enables real-time updates of dashboards, and real-time notifications.',
           },
         ].map((card, index) => (
           <Grid item key={index} sx={{ display: 'flex', marginLeft: '65px' }}>
@@ -65,8 +64,8 @@ const Cards = () => {
                 }}
               >
                 <CardMedia
-                  component="img"
-                  height="140"
+                  component='img'
+                  height='140'
                   image={card.image}
                   alt={card.title}
                   //   sx={{ objectFit: 'cover' }} // Ensure images fill the top part
@@ -74,8 +73,8 @@ const Cards = () => {
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography
                     gutterBottom
-                    variant="h4"
-                    component="div"
+                    variant='h4'
+                    component='div'
                     sx={{
                       color: theme.palette.primary[700],
                       fontWeight: 'bold',
@@ -84,8 +83,8 @@ const Cards = () => {
                     {card.title}
                   </Typography>
                   <Typography
-                    variant="body1"
-                    color="text.secondary"
+                    variant='body1'
+                    color='text.secondary'
                     sx={{ color: theme.palette.primary[600] }}
                   >
                     {card.description}
@@ -97,7 +96,7 @@ const Cards = () => {
         ))}
       </Grid>
     </Box>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
