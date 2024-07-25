@@ -104,39 +104,41 @@ const Docker = () => {
               <Typography
                 variant='h3'
                 gutterBottom
-                color='white'
                 sx={{
                   fontWeight: 'bold',
                   lineHeight: 1.5,
                   mb: 1,
                   fontSize: '2rem',
+                  background: 'linear-gradient(45deg, #827bb4, #a2c2f9)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
                 }}
               >
-                Ready to Begin? <br />
-                <Typography
-                  component='span'
-                  variant='h2'
-                  sx={{
-                    fontWeight: 'bold',
-                    fontSize: '3rem',
-                    color: '#8ec5fc',
-                    textShadow: `0 0 10px ${theme.palette.primary.main}, 0 0 20px ${theme.palette.primary.main}`,
-                    transition: 'transform 0.3s ease, text-shadow 0.3s ease',
-                    '&:hover': {
-                      transform: 'scale(1.1)',
-                      textShadow: `0 0 15px ${theme.palette.primary.main}, 0 0 30px ${theme.palette.primary.main}`,
-                    },
-                  }}
-                >
-                  dockerhub
-                </Typography>
+                Ready to Begin?
+              </Typography>
+              <Typography
+                component='span'
+                variant='h2'
+                sx={{
+                  fontWeight: 'bold',
+                  fontSize: '3rem',
+                  color: '#318CE7',
+                  transition: 'transform 0.3s ease, text-shadow 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.1)',
+                    textShadow: `0 0 15px ${'#a2c2f9'}, 0 0 30px ${'#a2c2f9'}`,
+                  },
+                }}
+              >
+                dockerhub
               </Typography>
               <Typography
                 variant='h5'
                 paragraph
                 sx={{
                   mt: 2,
-                  color: 'white',
+                  color: '#F0F8FF',
                   maxWidth: '500px',
                   fontSize: '1.25rem',
                 }}
@@ -194,7 +196,7 @@ const Docker = () => {
               <Typography
                 variant='body1'
                 paragraph
-                sx={{ mt: 3, color: 'white', fontSize: '1.25rem' }}
+                sx={{ mt: 3, color: '#F0F8FF', fontSize: '1.25rem' }}
               >
                 Follow our step-by-step installation on{' '}
                 <Link

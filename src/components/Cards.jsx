@@ -73,9 +73,11 @@ const Cards = () => {
 
   return (
     <Box
-      sx={{ backgroundColor: theme.palette.background.default,
-         pt: 13, 
-         pb: 23 }}
+      sx={{
+        backgroundColor: theme.palette.background.default,
+        pt: 13,
+        pb: 23,
+      }}
     >
       <Typography
         variant='h3'
@@ -83,10 +85,12 @@ const Cards = () => {
         sx={{
           textAlign: 'center',
           mb: 4,
-          color: '#fff',
           fontFamily: 'Roboto, sans-serif',
           fontWeight: 'bold',
           fontSize: '3rem',
+          background: 'linear-gradient(45deg, #72A0C1 ,#827bb4)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
         }}
       >
         Technologies Used in Our Project

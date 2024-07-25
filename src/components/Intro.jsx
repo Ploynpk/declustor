@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { keyframes } from '@emotion/react';
-// import dashboard from '../assets/dashboard.gif';
-import dash from '../assets/dash.gif';
+import dashboard from '../assets/dashboard.gif';
 import cloud from '../assets/cloud.png';
 
 // Keyframe animation for typing effect
@@ -11,7 +10,7 @@ const typing = keyframes`
     width: 0;
   }
   to {
-    width: 60%;
+    width: 100%;
   }
 `;
 
@@ -45,7 +44,7 @@ const Intro = () => {
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
         px: 3,
@@ -93,93 +92,74 @@ const Intro = () => {
           animation: `${float} 25s linear infinite`,
         }}
       />
-      <Typography
-        variant='h2'
-        component='h1'
-        sx={{
-          fontSize: '6rem',
-          fontWeight: 'bold',
-          color: '#fff',
-          mb: 3,
-          position: 'relative',
-          display: 'inline-block',
-          overflow: 'hidden',
-          '&::before': {
-            content: '"Welcome to"',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: -1,
-            fontSize: '6rem',
-            fontWeight: 'bold',
-            color: 'rgba(0, 0, 0, 0.3)',
-            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)',
-            transform: 'rotate(-2deg)',
-          },
-        }}
-      >
-        Welcome to
-        <Box
-          component='span'
+
+      <Box sx={{ mb: 2, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+        <Typography
+          variant='h2'
+          component='h1'
           sx={{
+            fontSize: { xs: '3rem', sm: '4rem', md: '6rem' },
+            fontWeight: 'bold',
+            color: '#F0F8FF',
             display: 'inline-block',
-            ml: 2,
-            fontSize: '6rem',
+            marginRight: { xs: 1, md: 2 },
+          }}
+        >
+          Welcome to
+        </Typography>
+        <Typography
+          variant='h2'
+          component='h1'
+          sx={{
+            fontSize: { xs: '3rem', sm: '4rem', md: '6rem' },
             fontWeight: 'bold',
             color: '#fff',
-            position: 'relative',
-            zIndex: 1,
-            '&::before': {
-              content: '"DeClustor"',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: -1,
-              fontSize: '6rem',
-              fontWeight: 'bold',
-              color: '#fff',
-              background: 'linear-gradient(45deg, #a2c2e2, #b4a6e5)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
-              animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
-            },
+            display: 'inline-block',
+            background: 'linear-gradient(45deg, #827bb4, #a2c2f9)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            // textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
+            animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
           }}
         >
           DeClustor
-        </Box>
-      </Typography>
-      <Typography
-        variant='h5'
-        component='h2'
-        sx={{
-          fontSize: '2rem',
-          color: '#fff',
-          mb: 4,
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          borderRight: '2px solid white',
-          animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
-          display: 'inline-block',
-          width: 'fit-content',
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: '50%',
-            left: '0',
-            width: '100%',
-            height: '100%',
-            background: 'rgba(0, 0, 0, 0.5)',
-            zIndex: -1,
-            transform: 'translateY(-50%)',
-            filter: 'blur(5px)',
-          },
-        }}
-      >
-        Your centralized solution for monitoring and managing AWS ECS Clusters.
-      </Typography>
+        </Typography>
+      </Box>
+
+      <Box sx={{ mb: 4 }}>
+        <Typography
+          variant='h5'
+          component='h2'
+          sx={{
+            fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
+            color: '#F0F8FF',
+            mb: 4,
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            borderRight: '2px solid white',
+            animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
+            display: 'inline-block',
+            width: 'fit-content',
+            position: 'relative',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: '100%',
+              background: 'rgba(0, 0, 0, 0.5)',
+              zIndex: -1,
+              transform: 'translateY(-50%)',
+              filter: 'blur(5px)',
+            },
+          }}
+        >
+          Your centralized solution for monitoring and managing AWS ECS Clusters.
+        </Typography>
+      </Box>
+
       <Box sx={{ mb: 4 }}>
         <Button
           variant='contained'
@@ -194,8 +174,8 @@ const Intro = () => {
       </Box>
       <Box
         component='img'
-        src={dash}
-        alt='dash'
+        src={dashboard}
+        alt='Dashboard'
         sx={{
           width: '90%',
           maxWidth: '1000px',
@@ -208,3 +188,17 @@ const Intro = () => {
 };
 
 export default Intro;
+
+/*
+gray: {
+    100: "#ecf3f9",
+    200: "#dae7f3",
+    300: "#c7daee",
+    400: "#b5cee8",
+    500: "#a2c2d9",
+    600: "#829bb5",
+    700: "#617488",
+    800: "#414e5a",
+    900: "#20272d"
+},
+*/

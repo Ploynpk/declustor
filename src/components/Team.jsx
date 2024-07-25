@@ -100,8 +100,11 @@ const Team = () => {
           variant='h1'
           fontWeight='bold'
           gutterBottom
-          color='#fff'
-          sx={{ mb: 3 }}
+          // color='#fff'
+          sx={{ mb: 3 ,
+            background: 'linear-gradient(45deg, #72A0C1 ,#827bb4)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',}}
         >
           MEET OUR TEAM
         </Typography>
@@ -167,7 +170,10 @@ const Team = () => {
               <Typography
                 variant='h3'
                 sx={{
-                  color: theme.palette.secondary[100],
+                  // color: theme.palette.secondary[100],
+                  background: 'linear-gradient(45deg,#827bb4, #72A0C1 )',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
                   fontWeight: 'bold',
                   mb: 1,
                 }}

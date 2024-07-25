@@ -16,7 +16,11 @@ const Footer = (props) => {
       }}
     >
       <Container maxWidth='sm'>
-        <Typography variant='body2' color={theme.palette.secondary[100]}>
+        <Typography variant='body2' sx={{
+           background: 'linear-gradient(45deg, #002244 ,#827bb4)',
+           WebkitBackgroundClip: 'text',
+           WebkitTextFillColor: 'transparent',
+        }}>
           DeClustor © {new Date().getFullYear()}
         </Typography>
       </Container>

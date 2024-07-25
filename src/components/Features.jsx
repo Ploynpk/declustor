@@ -46,13 +46,16 @@ const Features = () => {
               <Typography
                 variant='h3'
                 gutterBottom
-                color={theme.palette.secondary[100]}
+                // color={theme.palette.secondary[100]}
                 sx={{
                   fontWeight: 'bold',
                   fontSize: 50,
                   lineHeight: 1.5,
                   display: 'flex',
                   flexDirection: 'column',
+                  background: 'linear-gradient(45deg  ,#827bb4 ,#72A0C1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
                 }}
               >
                 What is DeClustor? <br />
@@ -63,8 +66,11 @@ const Features = () => {
                     fontWeight: 'bold',
                     fontSize: 30,
                     display: 'flex',
-                    justifyContent: 'center',
-                    color: theme.palette.secondary[400],
+                    // justifyContent: 'center',
+                    // color: theme.palette.secondary[400],
+                    // background: 'linear-gradient(45deg , #72A0C1 )',
+                    // WebkitBackgroundClip: 'text',
+                    // WebkitTextFillColor: 'transparent',
                   }}
                 >
                   EVERYTHING you need.
@@ -96,7 +102,7 @@ const Features = () => {
                         />
                       </ListItemIcon>
                       <ListItemText>
-                        <Typography variant='h3'>{text}</Typography>
+                        <Typography variant='h3' sx={{ color: '#F0F8FF'}}>{text}</Typography>
                       </ListItemText>
                     </ListItem>
                   ))}
@@ -111,3 +117,17 @@ const Features = () => {
 };
 
 export default Features;
+
+/*
+indigo: {
+    100: "#e6e5f0",
+    200: "#cdcae1",
+    300: "#b4b0d2",
+    400: "#9b95c3",
+    500: "#827bb4",
+    600: "#686290",
+    700: "#4e4a6c",
+    800: "#343148",
+    900: "#1a1924"
+},
+*/
