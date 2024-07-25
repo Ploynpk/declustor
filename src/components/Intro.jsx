@@ -94,7 +94,7 @@ const Intro = () => {
         }}
       />
 
-      <Box sx={{ mb: 2, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+      <Box sx={{ mb: 2, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', whiteSpace: 'nowrap' }}>
         <Typography
           variant='h2'
           component='h1'
@@ -104,7 +104,6 @@ const Intro = () => {
             color: '#F0F8FF',
             display: 'inline-block',
             marginRight: { xs: 1, md: 2 },
-            whiteSpace: 'nowrap',
           }}
         >
           Welcome to
@@ -122,7 +121,6 @@ const Intro = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
-            whiteSpace: 'nowrap',
           }}
         >
           DeClustor
