@@ -57,13 +57,13 @@ const Docker = () => {
     <Box
       sx={{
         backgroundColor: theme.palette.background.default,
-        py: 15,
-        px: 2,
+        py: 20,
+        // px: 2,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        pb: 40,
+        pb: 20,
       }}
     >
       <Container maxWidth='lg'>

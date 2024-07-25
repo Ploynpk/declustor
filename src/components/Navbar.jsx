@@ -31,13 +31,13 @@ const Navbar = () => {
         component='img'
         alt='logo'
         src={nobglogo}
-        height='80px'
-        width='80px'
+        height='100px'
+        width='100px'
         sx={{
           objectFit: 'contain',
           borderColor: theme.palette.primary[400],
-          borderStyle: 'solid',
-          borderWidth: 1,
+          // borderStyle: 'solid',
+          // borderWidth: 1,
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',

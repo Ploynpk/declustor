@@ -30,10 +30,10 @@ const Features = () => {
     <Box
       sx={{
         backgroundColor: theme.palette.background.default,
-        py: 10,
+        // py: 10,
         px: 2,
-        pb: 25,
-        pt: 25,
+        // pb: 25,
+        // pt: 25,
       }}
     >
       <Container maxWidth='lg'>

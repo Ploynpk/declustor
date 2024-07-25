@@ -73,7 +73,9 @@ const Cards = () => {
 
   return (
     <Box
-      sx={{ backgroundColor: theme.palette.background.default, pt: 25, pb: 25 }}
+      sx={{ backgroundColor: theme.palette.background.default,
+         pt: 13, 
+         pb: 23 }}
     >
       <Typography
         variant='h3'
