@@ -48,6 +48,7 @@ const Intro = () => {
         alignItems: 'center',
         textAlign: 'center',
         px: 3,
+        pt: { xs: 8, sm: 10, md: 12 }, // Adjust padding top for Navbar
         background: 'linear-gradient(to bottom right, #e0c3fc, #8ec5fc)',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
@@ -103,6 +104,7 @@ const Intro = () => {
             color: '#F0F8FF',
             display: 'inline-block',
             marginRight: { xs: 1, md: 2 },
+            whiteSpace: 'nowrap',
           }}
         >
           Welcome to
@@ -119,8 +121,8 @@ const Intro = () => {
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            // textShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
             animation: `${typing} 8s steps(40, end), ${cursorBlink} 1s step-end infinite`,
+            whiteSpace: 'nowrap',
           }}
         >
           DeClustor
@@ -188,17 +190,3 @@ const Intro = () => {
 };
 
 export default Intro;
-
-/*
-gray: {
-    100: "#ecf3f9",
-    200: "#dae7f3",
-    300: "#c7daee",
-    400: "#b5cee8",
-    500: "#a2c2d9",
-    600: "#829bb5",
-    700: "#617488",
-    800: "#414e5a",
-    900: "#20272d"
-},
-*/
