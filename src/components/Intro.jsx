@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { keyframes } from '@emotion/react';
 // import dashboard from '../assets/dashboard.gif';
-import everything from '../assets/everything.gif';
+import logs from '../assets/logs.gif';
 import cloud from '../assets/cloud.png';
 
 // Keyframe animation for typing effect
@@ -194,8 +194,8 @@ const Intro = () => {
       </Box>
       <Box
         component='img'
-        src={everything}
-        alt='everything'
+        src={logs}
+        alt='logs'
         sx={{
           width: '90%',
           maxWidth: '1000px',
